@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Proxy with Iframe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script>
+        function loadWebsite() {
+            const urlInput = document.getElementById('urlInput').value;
+            const iframe = document.getElementById('websiteFrame');
+
+            // Validate the URL
+            if (!urlInput.startsWith('http://') && !urlInput.startsWith('https://')) {
+                alert('Please enter a valid URL starting with http:// or https://');
+                return;
+            }
+
+            // Set the iframe source to the input URL
+            iframe.src = urlInput;
+        }
+    </script>
+</head>
+<body>
+    <h1>HTML Proxy with Iframe</h1>
+    <input type="text" id="urlInput" placeholder="Enter a URL (e.g., https://example.com)" />
+    <button onclick="loadWebsite()">Load Website</button>
+    <iframe id="websiteFrame" src="" sandbox="allow-same-origin allow-scripts"></iframe>
+</body>
+</html>
