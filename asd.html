@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Proxy Example</title>
+    <script>
+        async function fetchData() {
+            const url = 'https://lolc-one.vercel.app/worksheets/search.html'; // Target URL
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.text();
+                document.getElementById('result').innerHTML = data;
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+                document.getElementById('result').innerText = 'Error fetching data';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Simple Proxy Example</h1>
+    <button onclick="fetchData()">Fetch Data</button>
+    <div id="result"></div>
+</body>
+</html>
