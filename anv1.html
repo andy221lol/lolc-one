@@ -26,8 +26,11 @@
                 return;
             }
 
-            // Set the iframe source to the input URL
-            iframe.src = urlInput;
+            // Construct the proxy URL
+            const proxyUrl = `https://lolc-one.vercel.app/worksheets/search.html?target=${encodeURIComponent(urlInput)}`;
+
+            // Set the iframe source to the proxy URL
+            iframe.src = proxyUrl;
         }
     </script>
 </head>
