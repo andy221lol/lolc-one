@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asteroid V3</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/andy221lol/lolc-one/main/logo.ico" type="image/x-icon"> <!-- Replace with your favicon path -->
+    <link rel="icon" href="https://raw.githubusercontent.com/andy221lol/lolc-one/main/logo.ico" type="image/x-icon">
     <style>
         html, body {
             height: 100%;
@@ -27,7 +27,18 @@
 </head>
 <body>
     <div class="container">
-        <iframe src="https://lolc-one.vercel.app" title="Embedded Website" allowfullscreen sandbox></iframe>
+        <iframe id="embeddedIframe" src="https://lolc-one.vercel.app" title="Embedded Website"></iframe>
     </div>
+
+    <script>
+        // Function to refresh the iframe
+        function refreshIframe() {
+            const iframe = document.getElementById('embeddedIframe');
+            iframe.src = iframe.src; // Reload the iframe
+        }
+
+        // Set interval to refresh every 5 seconds (5000 milliseconds)
+        setInterval(refreshIframe, 5000);
+    </script>
 </body>
 </html>
